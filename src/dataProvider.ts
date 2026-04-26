@@ -1,7 +1,7 @@
 import { fetchUtils } from "react-admin";
 
 // 你的 API 地址
-const apiUrl = "http://117.72.147.29:7881";
+const apiUrl = import.meta.env.VITE_JSON_SERVER_URL;
 
 // 创建 HTTP 客户端实例
 const httpClient = fetchUtils.fetchJson;
@@ -15,8 +15,8 @@ export const dataProvider = {
 
     return httpClient(url).then(({ json }) => {
       return {
-        data: json, // 返回数据
-        total: parseInt(json.length), // 数据总数
+        data: json,
+        total: parseInt(json.length),
       };
     });
   },
