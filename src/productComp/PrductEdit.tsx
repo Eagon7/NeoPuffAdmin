@@ -24,24 +24,32 @@ export const ProductEdit = (props: any) => (
         </SimpleFormIterator>
       </ArrayInput>
       <NumberInput source="rating" label="评分" />
-      <NumberInput source="discount" label="折扣" />
-      {/* // 0: 正常, 1: 禁用, 2: 删除, 3: 新品 jjj*/}
+      <NumberInput source="discount.amount" label="折扣金额" />
+      <NumberInput source="discount.percentage" label="折扣百分比" />
+      {/* // state 0下架 1上架 2新品 3畅销 */}
       <SelectInput
         source="state"
         label="状态"
         choices={[
-          { id: 0, name: "正常" },
-          { id: 1, name: "禁用" },
-          { id: 2, name: "删除" },
-          { id: 3, name: "新品" },
+          { id: 0, name: "下架" },
+          { id: 1, name: "上架" },
+          { id: 2, name: "新品" },
+          { id: 3, name: "畅销" },
         ]}
       />
-      <TextInput source="state" label="状态" />
+      <br /> <br />
       <ArrayInput source="specs" label="规格">
         <SimpleFormIterator>
           {/* 规格项 */}
           <TextInput source="label" label="规格项名" />
           <TextInput source="value" label="规格项值" />
+        </SimpleFormIterator>
+      </ArrayInput>
+      <p>口味</p>
+      <ArrayInput source="flavor" label="口味">
+        <SimpleFormIterator>
+          <TextInput source="label" label="口味项名" />
+          <TextInput source="value" label="口味项值" />
         </SimpleFormIterator>
       </ArrayInput>
     </SimpleForm>

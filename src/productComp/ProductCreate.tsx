@@ -31,7 +31,18 @@ export const ProductCreate = (props: any) => (
         </SimpleFormIterator>
       </ArrayInput>
       <NumberInput source="rating" label="评分" />
-      <NumberInput source="discount" label="折扣" />
+      <NumberInput source="discount.amount" label="折扣金额" />
+      <NumberInput source="discount.percentage" label="折扣百分比" />
+      <SelectInput
+        source="state"
+        label="状态"
+        choices={[
+          { id: 0, name: "下架" },
+          { id: 1, name: "上架" },
+          { id: 2, name: "新品" },
+          { id: 3, name: "畅销" },
+        ]}
+      />
       <ArrayInput source="specs" label="规格">
         <SimpleFormIterator>
           {/* 规格项 */}
