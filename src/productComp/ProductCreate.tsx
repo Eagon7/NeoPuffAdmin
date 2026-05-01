@@ -46,7 +46,7 @@ export const ProductCreate = (props: any) => (
       <ArrayInput source="specs" label="规格">
         <SimpleFormIterator>
           {/* 规格项 */}
-          <TextInput source="label" label="规格项名" />
+          <TextInput source="name" label="规格项名" />
           <TextInput source="value" label="规格项值" />
         </SimpleFormIterator>
       </ArrayInput>

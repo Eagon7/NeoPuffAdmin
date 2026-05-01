@@ -48,7 +48,7 @@ export const ProductEdit = (props: any) => (
       <p>口味</p>
       <ArrayInput source="flavor" label="口味">
         <SimpleFormIterator>
-          <TextInput source="label" label="口味项名" />
+          <TextInput source="name" label="口味项名" />
           <TextInput source="value" label="口味项值" />
         </SimpleFormIterator>
       </ArrayInput>
